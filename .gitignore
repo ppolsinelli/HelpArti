@@ -34,3 +34,4 @@ sysinfo.txt
 *.apk
 *.unitypackage
 HelpArti/Library/
+HelpArti/Temp/UnityLockfile

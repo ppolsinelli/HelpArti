@@ -1,15 +1,31 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class SolvingEquationManager : MonoBehaviour {
+namespace HelpArti
+{
+    public class SolvingEquationManager : MonoBehaviour
+    {
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        public CanvasGroup SolvingEquation;
+
+        public static SolvingEquationManager I;
+
+        private void Awake()
+        {
+            if (I == null)
+            {
+                I = this;
+            }
+        }
+
+        public void ShowUp()
+        {
+            SolvingEquation.gameObject.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            SolvingEquation.gameObject.SetActive(false);
+        }
+    }
 }

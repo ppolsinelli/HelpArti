@@ -3,11 +3,12 @@ using System.Collections;
 
 namespace HelpArti
 {
-    public class IntroduceNewProblemManager : MonoBehaviour
+    public class FriendlyNumbersManager : MonoBehaviour
     {
-        public CanvasGroup IntroduceNewProblem;
 
-        public static IntroduceNewProblemManager I;
+        public CanvasGroup FriendlyNumbers;
+
+        public static FriendlyNumbersManager I;
 
         private void Awake()
         {
@@ -19,12 +20,13 @@ namespace HelpArti
 
         public void ShowUp()
         {
-            IntroduceNewProblem.gameObject.SetActive(true);
+            FriendlyNumbers.gameObject.SetActive(true);
         }
 
         public void Hide()
         {
-            IntroduceNewProblem.gameObject.SetActive(false);
+            FriendlyNumbers.gameObject.SetActive(false);
         }
+
     }
 }

@@ -1,15 +1,32 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class WhereAboutManager : MonoBehaviour {
+namespace HelpArti
+{
+    public class WhereAboutManager : MonoBehaviour
+    {
+        public CanvasGroup WhereAbout;
 
-	// Use this for initialization
-	void Start () {
-	
-	}
-	
-	// Update is called once per frame
-	void Update () {
-	
-	}
+        public static WhereAboutManager I;
+
+        private void Awake()
+        {
+            if (I == null)
+            {
+                I = this;
+            }
+        }
+
+        public void ShowUp()
+        {
+            WhereAbout.gameObject.SetActive(true);
+        }
+
+        public void Hide()
+        {
+            WhereAbout.gameObject.SetActive(false);
+        }
+
+    }
+
 }

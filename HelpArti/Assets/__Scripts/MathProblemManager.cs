@@ -33,6 +33,15 @@ namespace HelpArti
             State = MathProblemManagerState.TO_BE_SETUPPED;
             CreateProblem();
             State = MathProblemManagerState.PRESENTING_PROBLEM;
+            
+            WhereAboutManager.I.Hide();
+            FriendlyNumbersManager.I.Hide();
+            SolvingEquationManager.I.Hide();
+            DecomposeNumberManager.I.Hide();
+
+            PathManager.I.ShowUp();
+            PathManager.I.Setup();
+            IntroduceNewProblemManager.I.ShowUp();
         }
 
         public void CreateProblem()

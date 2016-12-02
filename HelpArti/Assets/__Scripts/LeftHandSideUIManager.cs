@@ -11,17 +11,20 @@ namespace HelpArti
     public class LeftHandSideUIManager : MonoBehaviour
     {
         [Header("Configuration")]
-        
-        public Image Plus; 
-        public Image Multiply; 
-        public Image LeftParenthesis;
-        public Image RightParenthesis;
-        public Image EqualsImage;
+
+        public Sprite Plus;
+        public Sprite Multiply;
+        public Sprite LeftParenthesis;
+        public Sprite RightParenthesis;
+        public Sprite EqualsImage;
+
+        public Color[] NumberColors;
 
         /// <summary>
-        /// has a text child
+        /// Has a text child
         /// </summary>
         public Image NumberPrefab;
+        public Image OperatorPrefab;
 
         public static LeftHandSideUIManager I;
 
@@ -43,18 +46,21 @@ namespace HelpArti
 
             switch (problem.ProblemType)
             {
-                    case Problem.Type.SUM:
+                case Problem.Type.SUM:
+                    int index = 1;
                     foreach (int factor in problem.Factors)
                     {
-                        
+                        Image instantiate = (Image)Instantiate(NumberPrefab, container.transform, false);
+                        instantiate.transform.GetComponentInChildren<Text>().text = factor.ToString();
+                        if (index < problem.Factors.Count)
+                        {
+                            Image operatorImage = (Image)Instantiate(OperatorPrefab, container.transform, false);
+                            operatorImage.sprite = Plus;
+                        }
                     }
                     break;
             }
-
-
         }
-
-
 
     }
 }

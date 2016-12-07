@@ -12,7 +12,7 @@ public class AutoSaveOnRun
             if (EditorApplication.isPlayingOrWillChangePlaymode && !EditorApplication.isPlaying)
             {
                 EditorSceneManager.SaveScene(EditorSceneManager.GetActiveScene());
-                EditorApplication.SaveAssets();
+                AssetDatabase.SaveAssets();
             }
         };
     }
